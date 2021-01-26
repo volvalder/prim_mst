@@ -25,9 +25,7 @@ class Graph:
         self.marked.append(ver)
         for vertice in self.adjList[ver]:
             u,v,w = vertice
-            if u not in self.marked:
-                heapq.heappush(self.pq, [w,u,v])
-            if v not in self.marked:
+            if u not in self.marked or v not in self.marked:
                 heapq.heappush(self.pq, [w,u,v])
 
     def prim(self):
